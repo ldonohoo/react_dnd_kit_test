@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
 import {
   DndContext,
   closestCenter
@@ -22,7 +20,7 @@ function App() {
       collisionDetection={closestCenter}
       onDragEnd={handleDragEnd}
     >
-      <Container className="p-3" style={{"width": "50%"}} align="center">
+      <div className="p-3" style={{"width": "50%"}} align="center">
         <h3>The best programming languages!</h3>
         <SortableContext
           items={languages}
@@ -31,7 +29,7 @@ function App() {
           {/* We need components that use the useSortable hook */}
           {languages.map(language => <SortableItem key={language} id={language}/>)}
         </SortableContext>
-      </Container>
+      </div>
     </DndContext>
   );
 
